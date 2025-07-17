@@ -1,10 +1,14 @@
-import React from 'react';
-import { space } from '../../tokens/space';
+import React from "react";
+import { space } from "../../tokens/space";
 
 const SpaceTable = () => (
   <table>
     <thead>
-      <tr><th>Name</th><th>Value</th><th>Preview</th></tr>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+        <th>Preview</th>
+      </tr>
     </thead>
     <tbody>
       {Object.entries(space).map(([key, value]) => (
@@ -12,7 +16,15 @@ const SpaceTable = () => (
           <td>{key}</td>
           <td>{value}</td>
           <td>
-            <div style={{ width: value, height: '16px', background: '#eee', display: 'inline-block', border: '1px solid #ccc' }} />
+            <div
+              style={{
+                width: value,
+                height: "16px",
+                background: "#eee",
+                display: "inline-block",
+                border: "1px solid #ccc",
+              }}
+            />
           </td>
         </tr>
       ))}
@@ -21,15 +33,16 @@ const SpaceTable = () => (
 );
 
 const meta = {
-  title: 'Tokens/Spacing Tokens',
+  title: "0-Design System/Spacing Tokens",
   component: SpaceTable,
   parameters: {
     docs: {
       description: {
-        component: 'This page documents the spacing scale used in the design system.'
-      }
-    }
-  }
+        component:
+          "This page documents the spacing scale used in the design system.",
+      },
+    },
+  },
 };
 export default meta;
 
