@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: storybook
+    env: static
+    buildCommand: npm install && npm run build-storybook
+    staticPublishPath: storybook-static
