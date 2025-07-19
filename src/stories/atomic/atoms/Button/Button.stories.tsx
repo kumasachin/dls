@@ -1,18 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button } from '../../../../atomic/atoms/Button/Button';
-import { fn } from 'storybook/test';
+import { Button } from "../../../../atomic/atoms/Button/Button";
 
 const meta: Meta<typeof Button> = {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
-  args: { onClick: fn() },
 };
 export default meta;
 

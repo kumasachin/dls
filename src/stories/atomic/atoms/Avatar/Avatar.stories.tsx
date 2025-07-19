@@ -11,8 +11,8 @@ type Story = StoryObj<typeof Avatar>;
 
 export const WithImage: Story = {
   args: {
-    src: 'https://randomuser.me/api/portraits/men/32.jpg',
-    alt: 'User',
+    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face",
+    alt: "User",
     size: 48,
   },
 };
