@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { AlertBox } from "../../../../atomic/molecules/AlertBox/AlertBox";
+import { AlertBox } from '../../../../atomic/molecules/AlertBox/AlertBox';
 import { useState } from 'react';
 
 const meta: Meta<typeof AlertBox> = {
-  title: "Molecules/AlertBox",
+  title: 'Molecules/AlertBox',
   component: AlertBox,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -42,11 +42,11 @@ export const Error: Story = {
 export const Dismissible: Story = {
   render: () => {
     const [visible, setVisible] = useState(true);
-    
+
     if (!visible) {
       return <button onClick={() => setVisible(true)}>Show Alert Again</button>;
     }
-    
+
     return (
       <AlertBox
         type="info"

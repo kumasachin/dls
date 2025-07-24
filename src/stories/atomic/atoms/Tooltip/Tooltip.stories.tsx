@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Tooltip } from "../../../../atomic/atoms/Tooltip/Tooltip";
-import { Button } from "../../../../atomic/atoms/Button/Button";
+import { Tooltip } from '../../../../atomic/atoms/Tooltip/Tooltip';
+import { Button } from '../../../../atomic/atoms/Button/Button';
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Atoms/Tooltip",
+  title: 'Atoms/Tooltip',
   component: Tooltip,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -27,17 +27,17 @@ export const Positions: Story = {
       <Tooltip content="Tooltip on top" position="top">
         <Button label="Top Tooltip" />
       </Tooltip>
-      
+
       <div style={{ display: 'flex', gap: '50px' }}>
         <Tooltip content="Tooltip on left" position="left">
           <Button label="Left Tooltip" />
         </Tooltip>
-        
+
         <Tooltip content="Tooltip on right" position="right">
           <Button label="Right Tooltip" />
         </Tooltip>
       </div>
-      
+
       <Tooltip content="Tooltip on bottom" position="bottom">
         <Button label="Bottom Tooltip" />
       </Tooltip>
@@ -55,7 +55,8 @@ export const CustomDelay: Story = {
 
 export const LongContent: Story = {
   args: {
-    content: 'This is a tooltip with much longer content that demonstrates how tooltips handle more text',
+    content:
+      'This is a tooltip with much longer content that demonstrates how tooltips handle more text',
     children: <Button label="Hover for long tooltip" />,
   },
 };

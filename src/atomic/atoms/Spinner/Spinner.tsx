@@ -5,14 +5,11 @@ export interface SpinnerProps {
   color?: string;
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({ 
-  size = 'medium',
-  color = '#007bff'
-}) => {
+export const Spinner: React.FC<SpinnerProps> = ({ size = 'medium', color = '#007bff' }) => {
   const sizes = {
     small: 16,
     medium: 24,
-    large: 32
+    large: 32,
   };
 
   const spinnerSize = sizes[size];
@@ -25,7 +22,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
         border: `2px solid ${color}20`,
         borderTop: `2px solid ${color}`,
         borderRadius: '50%',
-        animation: 'spin 1s linear infinite'
+        animation: 'spin 1s linear infinite',
       }}
     >
       <style>

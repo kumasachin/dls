@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Header } from "../../../../atomic/organisms/Header/Header";
-import { Button } from "../../../../atomic/atoms/Button/Button";
+import { Header } from '../../../../atomic/organisms/Header/Header';
+import { Button } from '../../../../atomic/atoms/Button/Button';
 
 const meta: Meta<typeof Header> = {
-  title: "Organisms/Header",
+  title: 'Organisms/Header',
   component: Header,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <div style={{ margin: '-1rem', height: '100px' }}>
@@ -65,25 +65,20 @@ export const WithActions: Story = {
         title="Company Name"
         logoUrl="https://via.placeholder.com/32"
         actions={[
-          <Button 
+          <Button
             key="help"
-            label="Help" 
-            onClick={() => alert('Help clicked')} 
+            label="Help"
+            onClick={() => alert('Help clicked')}
             primary={false}
             backgroundColor="#f5f5f5"
           />,
-          <Button 
+          <Button
             key="signup"
-            label="Sign Up" 
-            onClick={() => alert('Sign Up clicked')} 
+            label="Sign Up"
+            onClick={() => alert('Sign Up clicked')}
             primary={false}
           />,
-          <Button 
-            key="signin"
-            primary
-            label="Sign In" 
-            onClick={() => alert('Sign In clicked')} 
-          />
+          <Button key="signin" primary label="Sign In" onClick={() => alert('Sign In clicked')} />,
         ]}
       />
     );

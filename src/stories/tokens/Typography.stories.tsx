@@ -1,21 +1,21 @@
-import React from "react";
-import { typography } from "../../tokens/typography";
+import React from 'react';
+import { typography } from '../../tokens/typography';
 
 const tableStyle: React.CSSProperties = {
-  fontFamily: "Inter, Arial, sans-serif",
-  fontSize: "15px",
-  borderCollapse: "collapse",
-  width: "100%",
+  fontFamily: 'Inter, Arial, sans-serif',
+  fontSize: '15px',
+  borderCollapse: 'collapse',
+  width: '100%',
   marginTop: 16,
 };
 const thtdStyle: React.CSSProperties = {
-  padding: "8px 12px",
-  border: "1px solid #e0e0e0",
-  textAlign: "left",
+  padding: '8px 12px',
+  border: '1px solid #e0e0e0',
+  textAlign: 'left',
 };
 const previewFont: React.CSSProperties = {
-  fontFamily: "Inter, Arial, sans-serif",
-  display: "inline-block",
+  fontFamily: 'Inter, Arial, sans-serif',
+  display: 'inline-block',
 };
 
 const TypographyTable = () => (
@@ -51,12 +51,11 @@ const TypographyTable = () => (
 );
 
 export default {
-  title: "0-Design System/Typography Tokens",
+  title: 'Design Tokens/Typography Tokens',
   parameters: {
     docs: {
       description: {
-        component:
-          "This page documents the typography scale used in the design system.",
+        component: 'This page documents the typography scale used in the design system.',
       },
     },
   },

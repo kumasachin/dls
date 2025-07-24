@@ -11,9 +11,18 @@ export interface InputWithLabelProps {
   labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
 
-export const InputWithLabel: React.FC<InputWithLabelProps> = ({ label, value, onChange, id, inputProps, labelProps }) => (
+export const InputWithLabel: React.FC<InputWithLabelProps> = ({
+  label,
+  value,
+  onChange,
+  id,
+  inputProps,
+  labelProps,
+}) => (
   <div>
-    <Text as="label" htmlFor={id} {...labelProps}>{label}</Text>
+    <Text as="label" htmlFor={id} {...labelProps}>
+      {label}
+    </Text>
     <Input id={id} value={value} onChange={onChange} {...inputProps} />
   </div>
 );

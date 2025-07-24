@@ -22,12 +22,12 @@ export const MenuList: React.FC<MenuListProps> = ({
   width = '200px',
 }) => {
   return (
-    <Card 
-      radius="sm" 
+    <Card
+      radius="sm"
       padding="4px"
-      style={{ 
-        maxHeight, 
-        width, 
+      style={{
+        maxHeight,
+        width,
         overflowY: 'auto',
       }}
     >

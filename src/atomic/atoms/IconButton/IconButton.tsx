@@ -6,37 +6,37 @@ export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   variant?: 'default' | 'primary' | 'ghost';
 }
 
-export const IconButton: React.FC<IconButtonProps> = ({ 
-  icon, 
+export const IconButton: React.FC<IconButtonProps> = ({
+  icon,
   size = 'medium',
   variant = 'default',
-  ...props 
+  ...props
 }) => {
   const sizes = {
     small: { width: 32, height: 32, fontSize: 16 },
     medium: { width: 40, height: 40, fontSize: 20 },
-    large: { width: 48, height: 48, fontSize: 24 }
+    large: { width: 48, height: 48, fontSize: 24 },
   };
 
   const variants = {
-    default: { 
-      background: '#f8f9fa', 
+    default: {
+      background: '#f8f9fa',
       color: '#495057',
       border: '1px solid #dee2e6',
-      '&:hover': { background: '#e9ecef' }
+      '&:hover': { background: '#e9ecef' },
     },
-    primary: { 
-      background: '#007bff', 
+    primary: {
+      background: '#007bff',
       color: 'white',
       border: '1px solid #007bff',
-      '&:hover': { background: '#0056b3' }
+      '&:hover': { background: '#0056b3' },
     },
-    ghost: { 
-      background: 'transparent', 
+    ghost: {
+      background: 'transparent',
       color: '#495057',
       border: 'none',
-      '&:hover': { background: '#f8f9fa' }
-    }
+      '&:hover': { background: '#f8f9fa' },
+    },
   };
 
   const sizeStyle = sizes[size];
@@ -55,7 +55,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
         cursor: 'pointer',
         transition: 'all 0.2s ease',
         fontSize: sizeStyle.fontSize,
-        ...variantStyle
+        ...variantStyle,
       }}
       {...props}
     >

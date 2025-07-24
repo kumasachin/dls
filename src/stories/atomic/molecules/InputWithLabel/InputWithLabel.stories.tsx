@@ -18,6 +18,6 @@ export const Default: Story = {
   },
   render: (args) => {
     const [val, setVal] = useState('');
-    return <InputWithLabel {...args} value={val} onChange={e => setVal(e.target.value)} />;
+    return <InputWithLabel {...args} value={val} onChange={(e) => setVal(e.target.value)} />;
   },
 };

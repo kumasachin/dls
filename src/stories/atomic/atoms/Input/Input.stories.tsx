@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input } from "../../../../atomic/atoms/Input/Input";
+import { Input } from '../../../../atomic/atoms/Input/Input';
 import { useState } from 'react';
 
 const meta: Meta<typeof Input> = {
@@ -22,6 +22,6 @@ export const Default: Story = {
   },
   render: (args) => {
     const [val, setVal] = useState(args.value);
-    return <Input {...args} value={val} onChange={e => setVal(e.target.value)} />;
+    return <Input {...args} value={val} onChange={(e) => setVal(e.target.value)} />;
   },
 };

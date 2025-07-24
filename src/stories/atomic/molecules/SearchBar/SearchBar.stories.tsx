@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SearchBar } from "../../../../atomic/molecules/SearchBar/SearchBar";
+import { SearchBar } from '../../../../atomic/molecules/SearchBar/SearchBar';
 import { useState } from 'react';
 
 const meta: Meta<typeof SearchBar> = {
-  title: "Molecules/SearchBar",
+  title: 'Molecules/SearchBar',
   component: SearchBar,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
 type Story = StoryObj<typeof SearchBar>;
 
 export const Default: Story = {
-  render: (args) => {
+  render: () => {
     const [value, setValue] = useState('');
     const handleSearch = () => {
       alert(`Searching for: ${value}`);
@@ -23,11 +23,7 @@ export const Default: Story = {
 
     return (
       <div style={{ width: '300px' }}>
-        <SearchBar
-          value={value}
-          onChange={setValue}
-          onSearch={handleSearch}
-        />
+        <SearchBar value={value} onChange={setValue} onSearch={handleSearch} />
       </div>
     );
   },
@@ -62,11 +58,7 @@ export const WithInitialValue: Story = {
 
     return (
       <div style={{ width: '300px' }}>
-        <SearchBar
-          value={value}
-          onChange={setValue}
-          onSearch={handleSearch}
-        />
+        <SearchBar value={value} onChange={setValue} onSearch={handleSearch} />
       </div>
     );
   },

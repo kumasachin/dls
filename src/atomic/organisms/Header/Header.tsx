@@ -44,12 +44,12 @@ export const Header: React.FC<HeaderProps> = ({
         gap: '24px',
       }}
     >
-      <div 
-        style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '12px', 
-          cursor: onLogoClick ? 'pointer' : 'default' 
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          cursor: onLogoClick ? 'pointer' : 'default',
         }}
         onClick={onLogoClick}
       >
@@ -74,16 +74,8 @@ export const Header: React.FC<HeaderProps> = ({
         ))}
 
         {userName && (
-          <div 
-            onClick={onUserClick} 
-            style={{ cursor: onUserClick ? 'pointer' : 'default' }}
-          >
-            <UserInfo
-              name={userName}
-              imageUrl={userImageUrl}
-              subtitle={userSubtitle}
-              size="sm"
-            />
+          <div onClick={onUserClick} style={{ cursor: onUserClick ? 'pointer' : 'default' }}>
+            <UserInfo name={userName} imageUrl={userImageUrl} subtitle={userSubtitle} size="sm" />
           </div>
         )}
       </div>

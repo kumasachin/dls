@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Divider } from "../../../../atomic/atoms/Divider/Divider";
+import { Divider } from '../../../../atomic/atoms/Divider/Divider';
 
 const meta: Meta<typeof Divider> = {
-  title: "Atoms/Divider",
+  title: 'Atoms/Divider',
   component: Divider,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 

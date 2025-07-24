@@ -1,4 +1,4 @@
-import { color } from "../../tokens/color";
+import { color } from '../../tokens/color';
 
 const ColorTable = () => (
   <table>
@@ -20,8 +20,8 @@ const ColorTable = () => (
                 width: 32,
                 height: 16,
                 background: value,
-                border: "1px solid #ccc",
-                display: "inline-block",
+                border: '1px solid #ccc',
+                display: 'inline-block',
               }}
             />
           </td>
@@ -32,12 +32,11 @@ const ColorTable = () => (
 );
 
 export default {
-  title: "0-Design System/Color Tokens",
+  title: 'Design Tokens/Color Tokens',
   parameters: {
     docs: {
       description: {
-        component:
-          "This page documents the color palette used in the design system.",
+        component: 'This page documents the color palette used in the design system.',
       },
     },
   },

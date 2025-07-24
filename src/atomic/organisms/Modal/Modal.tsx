@@ -78,28 +78,26 @@ export const Modal: React.FC<ModalProps> = ({
       >
         {title && (
           <div>
-            <div style={{ 
-              padding: '16px', 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'space-between' 
-            }}>
+            <div
+              style={{
+                padding: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 500 }}>{title}</h3>
-              <IconButton 
-                icon="✕" 
-                onClick={onClose} 
-                aria-label="Close modal"
-              />
+              <IconButton icon="✕" onClick={onClose} aria-label="Close modal" />
             </div>
             <Divider margin="0" />
           </div>
         )}
 
-        <div 
-          style={{ 
+        <div
+          style={{
             padding: '16px',
             overflowY: 'auto',
-            flex: '1 1 auto'
+            flex: '1 1 auto',
           }}
         >
           {children}
@@ -108,12 +106,14 @@ export const Modal: React.FC<ModalProps> = ({
         {footer && (
           <>
             <Divider margin="0" />
-            <div style={{ 
-              padding: '16px', 
-              display: 'flex', 
-              justifyContent: 'flex-end',
-              gap: '12px'
-            }}>
+            <div
+              style={{
+                padding: '16px',
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: '12px',
+              }}
+            >
               {footer}
             </div>
           </>

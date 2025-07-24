@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { MenuList } from "../../../../atomic/molecules/MenuList/MenuList";
+import { MenuList } from '../../../../atomic/molecules/MenuList/MenuList';
 
 const meta: Meta<typeof MenuList> = {
-  title: "Molecules/MenuList",
+  title: 'Molecules/MenuList',
   component: MenuList,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -42,7 +42,12 @@ export const WithDisabledItems: Story = {
     items: [
       { id: '1', label: 'Profile', onClick: () => alert('Profile clicked') },
       { id: '2', label: 'Settings', onClick: () => alert('Settings clicked') },
-      { id: '3', label: 'Premium Features', disabled: true, onClick: () => alert('Premium clicked') },
+      {
+        id: '3',
+        label: 'Premium Features',
+        disabled: true,
+        onClick: () => alert('Premium clicked'),
+      },
       { id: '4', label: 'Help', onClick: () => alert('Help clicked') },
       { id: '5', label: 'Logout', onClick: () => alert('Logout clicked') },
     ],

@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Card } from "../../../../atomic/atoms/Card/Card";
+import { Card } from '../../../../atomic/atoms/Card/Card';
 
 const meta: Meta<typeof Card> = {
-  title: "Atoms/Card",
+  title: 'Atoms/Card',
   component: Card,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 

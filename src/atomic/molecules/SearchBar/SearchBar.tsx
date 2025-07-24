@@ -1,6 +1,6 @@
-import React from "react";
-import { Input } from "../../atoms/Input/Input";
-import { IconButton } from "../../atoms/IconButton/IconButton";
+import React from 'react';
+import { Input } from '../../atoms/Input/Input';
+import { IconButton } from '../../atoms/IconButton/IconButton';
 
 export interface SearchBarProps {
   value: string;
@@ -13,16 +13,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   value,
   onChange,
   onSearch,
-  placeholder = "Search...",
+  placeholder = 'Search...',
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       onSearch();
     }
   };
 
   return (
-    <div style={{ display: "flex", gap: "8px" }}>
+    <div style={{ display: 'flex', gap: '8px' }}>
       <Input
         value={value}
         onChange={(e) => onChange(e.target.value)}

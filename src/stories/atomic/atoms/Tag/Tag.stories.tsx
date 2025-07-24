@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Tag } from "../../../../atomic/atoms/Tag/Tag";
+import { Tag } from '../../../../atomic/atoms/Tag/Tag';
 import { useState } from 'react';
 
 const meta: Meta<typeof Tag> = {
-  title: "Atoms/Tag",
+  title: 'Atoms/Tag',
   component: Tag,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -46,17 +46,11 @@ export const Sizes: Story = {
 export const Removable: Story = {
   render: () => {
     const [visible, setVisible] = useState(true);
-    
+
     if (!visible) {
       return <button onClick={() => setVisible(true)}>Show Tag Again</button>;
     }
-    
-    return (
-      <Tag 
-        label="Click × to remove" 
-        onRemove={() => setVisible(false)} 
-        color="primary"
-      />
-    );
+
+    return <Tag label="Click × to remove" onRemove={() => setVisible(false)} color="primary" />;
   },
 };

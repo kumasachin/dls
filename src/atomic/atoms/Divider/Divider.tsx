@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   color?: string;
@@ -8,8 +8,8 @@ export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
 }
 
 export const Divider: React.FC<DividerProps> = ({
-  color = "#e0e0e0",
-  margin = "16px 0",
+  color = '#e0e0e0',
+  margin = '16px 0',
   vertical = false,
   thickness = 1,
   style,
@@ -18,18 +18,18 @@ export const Divider: React.FC<DividerProps> = ({
   return (
     <hr
       style={{
-        border: "none",
+        border: 'none',
         margin,
         ...(vertical
           ? {
               borderLeft: `${thickness}px solid ${color}`,
-              height: "100%",
+              height: '100%',
               width: 0,
-              display: "inline-block",
+              display: 'inline-block',
             }
           : {
               borderTop: `${thickness}px solid ${color}`,
-              width: "100%",
+              width: '100%',
             }),
         ...style,
       }}

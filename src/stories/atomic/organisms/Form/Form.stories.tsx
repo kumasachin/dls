@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Form } from "../../../../atomic/organisms/Form/Form";
-import { Input } from "../../../../atomic/atoms/Input/Input";
-import { FormField } from "../../../../atomic/molecules/FormField/FormField";
-import { Button } from "../../../../atomic/atoms/Button/Button";
+import { Form } from '../../../../atomic/organisms/Form/Form';
+import { Input } from '../../../../atomic/atoms/Input/Input';
+import { FormField } from '../../../../atomic/molecules/FormField/FormField';
+import { Button } from '../../../../atomic/atoms/Button/Button';
 import { useState } from 'react';
 
 const meta: Meta<typeof Form> = {
-  title: "Organisms/Form",
+  title: 'Organisms/Form',
   component: Form,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
@@ -18,9 +18,9 @@ export const Default: Story = {
   render: () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    
+
     return (
-      <Form 
+      <Form
         title="Personal Information"
         onSubmit={(e) => {
           e.preventDefault();
@@ -28,18 +28,18 @@ export const Default: Story = {
         }}
       >
         <FormField label="First Name" required>
-          <Input 
-            value={firstName} 
-            onChange={(e) => setFirstName(e.target.value)} 
-            placeholder="Enter your first name" 
+          <Input
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="Enter your first name"
           />
         </FormField>
-        
+
         <FormField label="Last Name" required>
-          <Input 
-            value={lastName} 
-            onChange={(e) => setLastName(e.target.value)} 
-            placeholder="Enter your last name" 
+          <Input
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder="Enter your last name"
           />
         </FormField>
       </Form>
@@ -50,9 +50,9 @@ export const Default: Story = {
 export const WithCancel: Story = {
   render: () => {
     const [email, setEmail] = useState('');
-    
+
     return (
-      <Form 
+      <Form
         title="Subscription"
         onSubmit={(e) => {
           e.preventDefault();
@@ -61,10 +61,10 @@ export const WithCancel: Story = {
         onCancel={() => alert('Cancelled')}
       >
         <FormField label="Email" required>
-          <Input 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Enter your email" 
+          <Input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
           />
         </FormField>
       </Form>
@@ -76,9 +76,9 @@ export const Loading: Story = {
   render: () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    
+
     return (
-      <Form 
+      <Form
         title="Sign In"
         isSubmitting={true}
         submitLabel="Sign In"
@@ -87,19 +87,19 @@ export const Loading: Story = {
         }}
       >
         <FormField label="Username" required>
-          <Input 
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
-            placeholder="Enter your username" 
+          <Input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter your username"
           />
         </FormField>
-        
+
         <FormField label="Password" required>
-          <Input 
+          <Input
             type="password"
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder="Enter your password" 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter your password"
           />
         </FormField>
       </Form>
@@ -110,9 +110,9 @@ export const Loading: Story = {
 export const WithCustomActions: Story = {
   render: () => {
     const [email, setEmail] = useState('');
-    
+
     return (
-      <Form 
+      <Form
         title="Newsletter"
         submitLabel="Subscribe"
         onSubmit={(e) => {
@@ -120,19 +120,19 @@ export const WithCustomActions: Story = {
           alert(`Subscribed: ${email}`);
         }}
         actions={[
-          <Button 
-            label="Clear" 
-            onClick={() => setEmail('')} 
+          <Button
+            label="Clear"
+            onClick={() => setEmail('')}
             primary={false}
-            backgroundColor="#f5f5f5" 
+            backgroundColor="#f5f5f5"
           />,
         ]}
       >
         <FormField label="Email" required>
-          <Input 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Enter your email" 
+          <Input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
           />
         </FormField>
       </Form>

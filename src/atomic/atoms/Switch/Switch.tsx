@@ -7,11 +7,11 @@ export interface SwitchProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-export const Switch: React.FC<SwitchProps> = ({ 
-  checked = false, 
-  onChange, 
+export const Switch: React.FC<SwitchProps> = ({
+  checked = false,
+  onChange,
   disabled = false,
-  size = 'medium'
+  size = 'medium',
 }) => {
   const handleChange = () => {
     if (!disabled) {
@@ -22,7 +22,7 @@ export const Switch: React.FC<SwitchProps> = ({
   const sizeMap = {
     small: { width: 32, height: 16, thumb: 12 },
     medium: { width: 44, height: 24, thumb: 18 },
-    large: { width: 56, height: 32, thumb: 24 }
+    large: { width: 56, height: 32, thumb: 24 },
   };
 
   const dimensions = sizeMap[size];
@@ -41,7 +41,7 @@ export const Switch: React.FC<SwitchProps> = ({
         position: 'relative',
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.5 : 1,
-        transition: 'all 0.2s ease'
+        transition: 'all 0.2s ease',
       }}
     >
       <div
@@ -54,7 +54,7 @@ export const Switch: React.FC<SwitchProps> = ({
           top: '50%',
           left: checked ? `calc(100% - ${dimensions.thumb + 2}px)` : '2px',
           transform: 'translateY(-50%)',
-          transition: 'left 0.2s ease'
+          transition: 'left 0.2s ease',
         }}
       />
     </button>

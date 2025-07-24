@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { UserInfo } from "../../../../atomic/molecules/UserInfo/UserInfo";
+import { UserInfo } from '../../../../atomic/molecules/UserInfo/UserInfo';
 
 const meta: Meta<typeof UserInfo> = {
-  title: "Molecules/UserInfo",
+  title: 'Molecules/UserInfo',
   component: UserInfo,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 export default meta;
 
