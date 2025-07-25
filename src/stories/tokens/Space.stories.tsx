@@ -1,4 +1,3 @@
-import React from 'react';
 import { space } from '../../tokens/space';
 
 const SpaceTable = () => (

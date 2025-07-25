@@ -1,0 +1,29 @@
+# Build outputs
+dist/
+build/
+storybook-static/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package lock files
+package-lock.json
+yarn.lock
+
+# Auto-generated files
+*.min.js
+*.min.css

@@ -1,9 +1,13 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "eslint --fix",
-    "prettier --write"
+    "eslint --fix --max-warnings 0",
+    "prettier --write",
+    "bash -c 'npm run type-check'"
   ],
   "*.{json,md,html,css}": [
+    "prettier --write"
+  ],
+  "package.json": [
     "prettier --write"
   ]
 }

@@ -75,7 +75,12 @@ export const Header: React.FC<HeaderProps> = ({
 
         {userName && (
           <div onClick={onUserClick} style={{ cursor: onUserClick ? 'pointer' : 'default' }}>
-            <UserInfo name={userName} imageUrl={userImageUrl} subtitle={userSubtitle} size="sm" />
+            <UserInfo
+              name={userName}
+              {...(userImageUrl && { imageUrl: userImageUrl })}
+              {...(userSubtitle && { subtitle: userSubtitle })}
+              size="sm"
+            />
           </div>
         )}
       </div>

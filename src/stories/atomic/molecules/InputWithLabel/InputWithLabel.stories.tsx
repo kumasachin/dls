@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+
 import { InputWithLabel } from '../../../../atomic/molecules/InputWithLabel/InputWithLabel';
-import React, { useState } from 'react';
 
 const meta: Meta<typeof InputWithLabel> = {
   title: 'Molecules/InputWithLabel',

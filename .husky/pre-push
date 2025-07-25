@@ -1,4 +1,15 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run test || (echo "Tests failed, please fix them before pushing" && exit 1)
+echo "🔍 Running pre-push quality checks..."
+
+# Run full quality pipeline
+npm run ci
+
+if [ $? -ne 0 ]; then
+  echo "❌ Quality checks failed. Push aborted."
+  echo "Fix the issues above before pushing."
+  exit 1
+fi
+
+echo "✅ All quality checks passed. Proceeding with push."

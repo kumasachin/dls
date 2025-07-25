@@ -1,5 +1,6 @@
 import React from 'react';
-import { Input } from '../../atoms/Input/Input';
+
+import { Input, type InputProps } from '../../atoms/Input/Input';
 import { Text } from '../../atoms/Text/Text';
 
 export interface InputWithLabelProps {
@@ -7,7 +8,7 @@ export interface InputWithLabelProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id?: string;
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  inputProps?: Omit<InputProps, 'value' | 'onChange'>;
   labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 }
 

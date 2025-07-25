@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Table } from '../../../../atomic/organisms/Table/Table';
-import { Tag } from '../../../../atomic/atoms/Tag/Tag';
 import { useState } from 'react';
+import { Tag } from '../../../../atomic/atoms/Tag/Tag';
+import { Table } from '../../../../atomic/organisms/Table/Table';
 
 const meta: Meta<typeof Table> = {
   title: 'Organisms/Table',
@@ -101,7 +101,7 @@ export const WithRowSelection: StoryObj<typeof Table> = {
           data={users}
           keyExtractor={(user) => user.id}
           onRowClick={(user) => setSelectedId(user.id)}
-          selectedId={selectedId}
+          {...(selectedId && { selectedId })}
         />
         {selectedId && (
           <div

@@ -25,7 +25,7 @@ export const UserInfo: React.FC<UserInfoProps> = ({ name, imageUrl, subtitle, si
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-      <Avatar src={imageUrl} size={sizeStyle.avatar} alt={name} />
+      <Avatar {...(imageUrl && { src: imageUrl })} size={sizeStyle.avatar} alt={name} />
       <div>
         <Text style={{ fontSize: sizeStyle.nameSize, fontWeight: 500 }}>{name}</Text>
         {subtitle && (

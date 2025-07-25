@@ -10,7 +10,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['0-Design System', 'Atoms', 'Molecules', 'Organisms', 'Templates', '*'],
+        order: ['Design Tokens', 'Atoms', 'Molecules', 'Organisms', 'Templates', '*'],
         method: 'alphabetical',
       },
     },

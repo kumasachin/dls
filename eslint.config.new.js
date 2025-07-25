@@ -9,13 +9,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config([
   {
-    ignores: [
-      'dist/**',
-      'node_modules/**',
-      'storybook-static/**',
-      '.storybook/build/**',
-      'scripts/**', // Ignore scripts directory (setup files)
-    ],
+    ignores: ['dist/**', 'node_modules/**', 'storybook-static/**', '.storybook/build/**'],
   },
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
@@ -50,6 +44,7 @@ export default tseslint.config([
       // General Code Quality
       'no-console': 'warn',
       'no-debugger': 'error',
+      'no-alert': 'warn',
       'prefer-const': 'error',
       'no-var': 'error',
       'object-shorthand': 'error',
@@ -57,14 +52,6 @@ export default tseslint.config([
 
       // React Refresh
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    },
-  },
-  // Special rules for Storybook files
-  {
-    files: ['**/*.stories.{ts,tsx}'],
-    rules: {
-      'no-alert': 'off', // Allow alerts in stories for demonstration
-      'no-console': 'off', // Allow console in stories for demo purposes
     },
   },
   ...storybook.configs['flat/recommended'],
