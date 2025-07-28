@@ -20,11 +20,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
 }) => {
   const displayItems: BreadcrumbItem[] =
     maxItems && items.length > maxItems
-      ? [
-          items[0],
-          { label: '...', href: undefined, onClick: undefined } as BreadcrumbItem,
-          ...items.slice(-(maxItems - 2)),
-        ]
+      ? [items[0]!, { label: '...' }, ...items.slice(-(maxItems - 2))]
       : items;
 
   const handleItemClick = (item: BreadcrumbItem, event: React.MouseEvent) => {
