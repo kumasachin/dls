@@ -148,12 +148,33 @@ src/
 
 ## Contributing
 
+### Development Workflow
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-component`)
-3. Run tests (`npm run test`)
-4. Commit your changes (`git commit -m 'Add amazing component'`)
-5. Push to the branch (`git push origin feature/amazing-component`)
-6. Open a Pull Request
+3. Make your changes and add tests
+4. Run quality checks (`npm run quality`)
+5. Commit your changes - the system will prompt for version updates on main branch
+6. Push to the branch (`git push origin feature/amazing-component`)
+7. Open a Pull Request
+
+### Version Management
+
+This project uses automated version management. When committing to the main branch, you'll be prompted to update the version:
+
+- **Patch** (1.0.0 → 1.0.1): Bug fixes, documentation updates
+- **Minor** (1.0.0 → 1.1.0): New features, backward compatible changes
+- **Major** (1.0.0 → 2.0.0): Breaking changes
+
+```bash
+# Manual version update
+npm run version-update
+
+# Complete release workflow (version, build, publish)
+npm run release
+```
+
+See [VERSION_MANAGEMENT.md](docs/VERSION_MANAGEMENT.md) for detailed information.
 
 ## Quality Assurance
 

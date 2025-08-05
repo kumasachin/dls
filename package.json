@@ -61,6 +61,8 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "generate-tests": "./scripts/generate-tests.sh",
+    "version-update": "./scripts/version-update.sh",
+    "release": "./scripts/release.sh",
     "prepare": "husky"
   },
   "peerDependencies": {

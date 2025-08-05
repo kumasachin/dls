@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if package.json was modified in this commit
+if git diff HEAD~1 HEAD --name-only | grep -q "package.json"; then
+    # Check if the version changed
+    current_version=$(node -p "require('./package.json').version")
+    
+    if [ ! -z "$current_version" ]; then
+        # Create a git tag for the new version
+        tag_name="v${current_version}"
+        
+        # Check if tag already exists
+        if ! git tag -l | grep -q "^${tag_name}$"; then
+            echo "🏷️  Creating git tag: ${tag_name}"
+            git tag -a "${tag_name}" -m "Release version ${current_version}"
+            echo "✅ Tag ${tag_name} created successfully"
+            echo "💡 Push tags with: git push origin --tags"
+        fi
+    fi
+fi

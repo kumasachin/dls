@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Check for version update on main branch
+./scripts/version-update.sh
+
 npx lint-staged
