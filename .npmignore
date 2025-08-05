@@ -1,0 +1,37 @@
+# Development files
+src/
+scripts/
+e2e/
+.storybook/
+stories/
+test/
+storybook-static/
+
+# Configuration files
+vite.config.ts
+vitest.config.ts
+vitest.shims.d.ts
+tsconfig.*.json
+playwright.config.ts
+eslint.config.js
+.prettierrc
+.gitignore
+
+# Development dependencies
+node_modules/
+.env*
+.DS_Store
+
+# Build artifacts (keep only dist/)
+*.log
+*.tgz
+
+# CI/CD
+.github/
+render.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
