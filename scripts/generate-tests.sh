@@ -40,12 +40,8 @@ import { ${component_name} } from './${component_name}'
 
 describe('${component_name} Component', () => {
   it('renders without crashing', () => {
-    // TODO: Add proper props based on component interface
     render(<${component_name} />)
-    // TODO: Add specific assertions
   })
-
-  // TODO: Add more specific tests based on component functionality
 })
 EOF
     

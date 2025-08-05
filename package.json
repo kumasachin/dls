@@ -1,5 +1,5 @@
 {
-  "name": "@your-org/design-system",
+  "name": "@designsync/dls",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "your-repo-url"
+    "url": "https://github.com/DesignSync-Int/dls.git"
   },
   "license": "MIT",
   "author": {
