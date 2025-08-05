@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Package
 
-- Published as `@designsync/dls` npm package
+- Published as `@kumasachin/dls` npm package
 - Configured for both CommonJS and ES Module exports
 
 #### Atoms

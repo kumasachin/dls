@@ -15,9 +15,9 @@ A comprehensive React component library built with TypeScript, Material-UI, and 
 ## Installation
 
 ```bash
-npm install @designsync/dls
+npm install @kumasachin/dls
 # or
-yarn add @designsync/dls
+yarn add @kumasachin/dls
 ```
 
 ## Peer Dependencies
@@ -31,7 +31,7 @@ npm install react react-dom @emotion/react @emotion/styled @mui/material
 ## Quick Start
 
 ```tsx
-import { Button, Card, Text } from '@designsync/dls';
+import { Button, Card, Text } from '@kumasachin/dls';
 
 function App() {
   return (
@@ -87,7 +87,7 @@ function App() {
 Import design tokens for consistent theming:
 
 ```tsx
-import { colors, typography, spacing } from '@designsync/dls';
+import { colors, typography, spacing } from '@kumasachin/dls';
 
 const customTheme = {
   primary: colors.primary,
@@ -101,7 +101,7 @@ const customTheme = {
 Full TypeScript support with exported prop types:
 
 ```tsx
-import { ButtonProps, CardProps } from '@designsync/dls';
+import { ButtonProps, CardProps } from '@kumasachin/dls';
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   // Your component logic
