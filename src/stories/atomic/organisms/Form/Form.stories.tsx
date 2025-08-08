@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Form } from '../../../../atomic/organisms/Form/Form';
+import { useState } from 'react';
+import { Button } from '../../../../atomic/atoms/Button/Button';
 import { Input } from '../../../../atomic/atoms/Input/Input';
 import { FormField } from '../../../../atomic/molecules/FormField/FormField';
-import { Button } from '../../../../atomic/atoms/Button/Button';
-import { useState } from 'react';
+import { Form } from '../../../../atomic/organisms/Form/Form';
 
 const meta: Meta<typeof Form> = {
   title: 'Organisms/Form',
@@ -120,12 +120,9 @@ export const WithCustomActions: Story = {
           alert(`Subscribed: ${email}`);
         }}
         actions={[
-          <Button
-            label="Clear"
-            onClick={() => setEmail('')}
-            primary={false}
-            backgroundColor="#f5f5f5"
-          />,
+          <Button onClick={() => setEmail('')} variant="secondary">
+            Clear
+          </Button>,
         ]}
       >
         <FormField label="Email" required>

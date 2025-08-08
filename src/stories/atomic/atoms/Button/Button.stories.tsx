@@ -8,37 +8,70 @@ const meta: Meta<typeof Button> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 };
+
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    children: 'Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    variant: 'secondary',
+    children: 'Button',
   },
 };
 
-export const Large: Story = {
+export const Ghost: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    variant: 'ghost',
+    children: 'Button',
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    children: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    size: 'sm',
+    children: 'Button',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: 'lg',
+    children: 'Button',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true,
+    children: 'Button',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    children: 'Button',
+  },
+};
+
+export const AsLink: Story = {
+  args: {
+    as: 'a',
+    children: 'Link Button',
   },
 };

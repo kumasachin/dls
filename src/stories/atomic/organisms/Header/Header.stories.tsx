@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Header } from '../../../../atomic/organisms/Header/Header';
 import { Button } from '../../../../atomic/atoms/Button/Button';
+import { Header } from '../../../../atomic/organisms/Header/Header';
 
 const meta: Meta<typeof Header> = {
   title: 'Organisms/Header',
@@ -65,20 +65,15 @@ export const WithActions: Story = {
         title="Company Name"
         logoUrl="https://via.placeholder.com/32"
         actions={[
-          <Button
-            key="help"
-            label="Help"
-            onClick={() => alert('Help clicked')}
-            primary={false}
-            backgroundColor="#f5f5f5"
-          />,
-          <Button
-            key="signup"
-            label="Sign Up"
-            onClick={() => alert('Sign Up clicked')}
-            primary={false}
-          />,
-          <Button key="signin" primary label="Sign In" onClick={() => alert('Sign In clicked')} />,
+          <Button key="help" onClick={() => alert('Help clicked')} variant="secondary">
+            Help
+          </Button>,
+          <Button key="signup" onClick={() => alert('Sign Up clicked')} variant="secondary">
+            Sign Up
+          </Button>,
+          <Button key="signin" variant="primary" onClick={() => alert('Sign In clicked')}>
+            Sign In
+          </Button>,
         ]}
       />
     );

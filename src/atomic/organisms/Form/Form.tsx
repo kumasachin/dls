@@ -48,15 +48,12 @@ export const Form: React.FC<FormProps> = ({
           ))}
 
           {onCancel && (
-            <Button
-              primary={false}
-              backgroundColor="#f5f5f5"
-              onClick={() => onCancel()}
-              label={cancelLabel}
-            />
+            <Button variant="secondary" onClick={() => onCancel()}>
+              {cancelLabel}
+            </Button>
           )}
 
-          <Button primary label={isSubmitting ? 'Submitting...' : submitLabel} />
+          <Button variant="primary">{isSubmitting ? 'Submitting...' : submitLabel}</Button>
         </div>
       </form>
     </Card>

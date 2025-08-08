@@ -1,4 +1,9 @@
-// Export all atoms
+import './tokens/dist/tokens.css';
+
+// Primitives
+export { Box } from './atomic/primitives/Box';
+
+// Atoms
 export { Avatar } from './atomic/atoms/Avatar/Avatar';
 export { Badge } from './atomic/atoms/Badge/Badge';
 export { Button } from './atomic/atoms/Button/Button';
@@ -50,6 +55,8 @@ export type { SwitchProps } from './atomic/atoms/Switch/Switch';
 export type { TagProps } from './atomic/atoms/Tag/Tag';
 export type { TextProps } from './atomic/atoms/Text/Text';
 export type { TooltipProps } from './atomic/atoms/Tooltip/Tooltip';
+// Types
+export type { BoxProps } from './atomic/primitives/Box';
 
 export type { AlertBoxProps } from './atomic/molecules/AlertBox/AlertBox';
 export type { BreadcrumbProps } from './atomic/molecules/Breadcrumb/Breadcrumb';

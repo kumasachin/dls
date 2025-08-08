@@ -1,0 +1,66 @@
+{
+  "color": {
+    "primary": {
+      "value": "#0070f3",
+      "type": "color"
+    },
+    "secondary": {
+      "value": "#7928ca",
+      "type": "color"
+    },
+    "accent": {
+      "value": "#f5a623",
+      "type": "color"
+    },
+    "background": {
+      "value": "#ffffff",
+      "type": "color"
+    },
+    "surface": {
+      "value": "#f4f4f4",
+      "type": "color"
+    },
+    "text": {
+      "value": "#222222",
+      "type": "color"
+    },
+    "muted": {
+      "value": "#888888",
+      "type": "color"
+    },
+    "border": {
+      "value": "#eaeaea",
+      "type": "color"
+    },
+    "error": {
+      "value": "#ee0000",
+      "type": "color"
+    },
+    "success": {
+      "value": "#007a5a",
+      "type": "color"
+    },
+    "dark": {
+      "background": {
+        "value": "#111827",
+        "type": "color"
+      },
+      "surface": {
+        "value": "#1f2937",
+        "type": "color"
+      },
+      "text": {
+        "value": "#f9fafb",
+        "type": "color"
+      },
+      "muted": {
+        "value": "#9ca3af",
+        "type": "color"
+      },
+      "border": {
+        "value": "#374151",
+        "type": "color"
+      }
+    }
+  }
+}
