@@ -70,6 +70,7 @@ export const validateThemeProps = <T>(schema: z.ZodSchema<T>, props: unknown): T
     return schema.parse(props);
   } catch (error) {
     if (error instanceof z.ZodError) {
+      // eslint-disable-next-line no-console
       console.error('Theme validation error:', error.issues);
       throw new Error(
         `Invalid theme configuration: ${error.issues.map((e) => e.message).join(', ')}`
