@@ -3,7 +3,7 @@ import { ThemeProvider } from '../../../tokens/themes/ThemeProvider';
 import { ThemeSwitcher } from '../../../tokens/themes/ThemeSwitcher';
 
 const meta = {
-  title: 'Tokens/ThemeSwitcher',
+  title: 'Design Tokens/ThemeSwitcher',
   component: ThemeSwitcher,
   parameters: {
     layout: 'centered',
