@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/DesignSync-Int/dls.git"
+    "url": "git@github.com:kumasachin/dls.git"
   },
   "license": "MIT",
   "author": {
