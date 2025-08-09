@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface CardGridItem {
   id: string | number;
@@ -71,7 +71,7 @@ export const CardGrid: React.FC<CardGridProps> = ({
       >
         {Array.from({ length: 6 }, (_, index) => (
           <div
-            key={`skeleton-${index}`}
+            key={`skeleton-${Date.now()}-${index}`}
             style={{
               ...cardStyle,
               animation: 'pulse 1.5s ease-in-out infinite',
@@ -138,16 +138,29 @@ export const CardGrid: React.FC<CardGridProps> = ({
     >
       {items.map((item) => {
         const CardContent = (
-          <div
+          <button
+            type="button"
             key={item.id}
-            style={cardStyle}
+            style={{
+              ...cardStyle,
+              border: 'none',
+              background: 'transparent',
+              textAlign: 'left',
+              cursor: item.onClick || onItemClick || item.href ? 'pointer' : 'default',
+            }}
             onMouseEnter={(e) => {
               if (item.onClick || onItemClick || item.href) {
                 Object.assign(e.currentTarget.style, hoverStyle);
               }
             }}
             onMouseLeave={(e) => {
-              Object.assign(e.currentTarget.style, cardStyle);
+              Object.assign(e.currentTarget.style, {
+                ...cardStyle,
+                border: 'none',
+                background: 'transparent',
+                textAlign: 'left',
+                cursor: item.onClick || onItemClick || item.href ? 'pointer' : 'default',
+              });
             }}
             onClick={() => handleItemClick(item)}
           >
@@ -188,7 +201,7 @@ export const CardGrid: React.FC<CardGridProps> = ({
               </p>
             )}
             {item.actions && <div style={{ marginTop: 'auto' }}>{item.actions}</div>}
-          </div>
+          </button>
         );
 
         if (item.href) {

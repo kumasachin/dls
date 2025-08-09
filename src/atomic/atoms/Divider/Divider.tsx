@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   color?: string;

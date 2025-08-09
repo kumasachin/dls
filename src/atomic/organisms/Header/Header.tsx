@@ -44,18 +44,35 @@ export const Header: React.FC<HeaderProps> = ({
         gap: '24px',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          cursor: onLogoClick ? 'pointer' : 'default',
-        }}
-        onClick={onLogoClick}
-      >
-        {logoUrl && <img src={logoUrl} alt="Logo" style={{ height: '32px' }} />}
-        <h1 style={{ margin: 0, fontSize: '20px', fontWeight: 600 }}>{title}</h1>
-      </div>
+      {onLogoClick ? (
+        <button
+          type="button"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            cursor: 'pointer',
+            border: 'none',
+            background: 'transparent',
+            padding: 0,
+          }}
+          onClick={onLogoClick}
+        >
+          {logoUrl && <img src={logoUrl} alt="Logo" style={{ height: '32px' }} />}
+          <h1 style={{ margin: 0, fontSize: '20px', fontWeight: 600 }}>{title}</h1>
+        </button>
+      ) : (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+          }}
+        >
+          {logoUrl && <img src={logoUrl} alt="Logo" style={{ height: '32px' }} />}
+          <h1 style={{ margin: 0, fontSize: '20px', fontWeight: 600 }}>{title}</h1>
+        </div>
+      )}
 
       {onSearch && (
         <div style={{ flexGrow: 1, maxWidth: '500px' }}>
@@ -69,20 +86,40 @@ export const Header: React.FC<HeaderProps> = ({
       )}
 
       <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '16px' }}>
-        {actions.map((action, index) => (
-          <div key={index}>{action}</div>
-        ))}
+        {actions.map((action, index) => {
+          const actionKey = `header-action-${index}-${Date.now()}`;
+          return <div key={actionKey}>{action}</div>;
+        })}
 
-        {userName && (
-          <div onClick={onUserClick} style={{ cursor: onUserClick ? 'pointer' : 'default' }}>
-            <UserInfo
-              name={userName}
-              {...(userImageUrl && { imageUrl: userImageUrl })}
-              {...(userSubtitle && { subtitle: userSubtitle })}
-              size="sm"
-            />
-          </div>
-        )}
+        {userName &&
+          (onUserClick ? (
+            <button
+              type="button"
+              onClick={onUserClick}
+              style={{
+                cursor: 'pointer',
+                border: 'none',
+                background: 'transparent',
+                padding: 0,
+              }}
+            >
+              <UserInfo
+                name={userName}
+                {...(userImageUrl && { imageUrl: userImageUrl })}
+                {...(userSubtitle && { subtitle: userSubtitle })}
+                size="sm"
+              />
+            </button>
+          ) : (
+            <div>
+              <UserInfo
+                name={userName}
+                {...(userImageUrl && { imageUrl: userImageUrl })}
+                {...(userSubtitle && { subtitle: userSubtitle })}
+                size="sm"
+              />
+            </div>
+          ))}
       </div>
     </header>
   );

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { Breadcrumb, type BreadcrumbItem } from './Breadcrumb';
+
 describe('Breadcrumb Component', () => {
   const mockItems: BreadcrumbItem[] = [
     { label: 'Home', href: '/' },

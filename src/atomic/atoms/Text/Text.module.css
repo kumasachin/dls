@@ -1,0 +1,100 @@
+/* Base text styles */
+.text {
+  font-family: var(--font-family-sans);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Size variants */
+.sizeExtraSmall {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.sizeSmall {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.sizeMedium {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sizeLarge {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.sizeExtraLarge {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.size2ExtraLarge {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+/* Weight variants */
+.weightNormal {
+  font-weight: 400;
+}
+
+.weightMedium {
+  font-weight: 500;
+}
+
+.weightSemibold {
+  font-weight: 600;
+}
+
+.weightBold {
+  font-weight: 700;
+}
+
+/* Color variants */
+.colorPrimary {
+  color: var(--color-text-primary);
+}
+
+.colorSecondary {
+  color: var(--color-text-secondary);
+}
+
+.colorMuted {
+  color: var(--color-text-muted);
+}
+
+.colorAccent {
+  color: var(--color-accent);
+}
+
+.colorError {
+  color: var(--color-error);
+}
+
+.colorSuccess {
+  color: var(--color-success);
+}
+
+.colorWarning {
+  color: var(--color-warning);
+}
+
+/* Alignment variants */
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.alignJustify {
+  text-align: justify;
+}

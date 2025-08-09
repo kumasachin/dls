@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Text } from './Text';
+
 describe('Text Component', () => {
   it('renders text content', () => {
     render(<Text>Hello World</Text>);

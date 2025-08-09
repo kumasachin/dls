@@ -1,0 +1,102 @@
+/**
+ * Dark Theme - Dark mode variant of the design system
+ */
+
+[data-theme='dark'] {
+  /* === SEMANTIC COLOR TOKENS === */
+
+  /* Background Colors */
+  --color-background-primary: var(--color-gray-950);
+  --color-background-secondary: var(--color-gray-900);
+  --color-background-tertiary: var(--color-gray-800);
+  --color-background-inverse: var(--color-gray-50);
+
+  /* Surface Colors */
+  --color-surface-primary: var(--color-gray-900);
+  --color-surface-secondary: var(--color-gray-800);
+  --color-surface-tertiary: var(--color-gray-700);
+  --color-surface-inverse: var(--color-gray-100);
+
+  /* Text Colors */
+  --color-text-primary: var(--color-gray-50);
+  --color-text-secondary: var(--color-gray-300);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-text-inverse: var(--color-gray-900);
+  --color-text-link: var(--color-primary-400);
+  --color-text-link-hover: var(--color-primary-300);
+
+  /* Border Colors */
+  --color-border-primary: var(--color-gray-700);
+  --color-border-secondary: var(--color-gray-600);
+  --color-border-tertiary: var(--color-gray-500);
+  --color-border-inverse: var(--color-gray-300);
+  --color-border-focus: var(--color-primary-500);
+
+  /* Interactive Colors */
+  --color-interactive-primary: var(--color-primary-500);
+  --color-interactive-primary-hover: var(--color-primary-400);
+  --color-interactive-primary-active: var(--color-primary-300);
+  --color-interactive-primary-disabled: var(--color-gray-600);
+
+  --color-interactive-secondary: var(--color-gray-700);
+  --color-interactive-secondary-hover: var(--color-gray-600);
+  --color-interactive-secondary-active: var(--color-gray-500);
+
+  /* Status Colors */
+  --color-status-success: var(--color-success-500);
+  --color-status-success-bg: rgba(34, 197, 94, 0.1);
+  --color-status-success-border: var(--color-success-700);
+
+  --color-status-warning: var(--color-warning-500);
+  --color-status-warning-bg: rgba(245, 158, 11, 0.1);
+  --color-status-warning-border: var(--color-warning-700);
+
+  --color-status-error: var(--color-error-500);
+  --color-status-error-bg: rgba(239, 68, 68, 0.1);
+  --color-status-error-border: var(--color-error-700);
+
+  --color-status-info: var(--color-info-500);
+  --color-status-info-bg: rgba(59, 130, 246, 0.1);
+  --color-status-info-border: var(--color-info-700);
+
+  /* === COMPONENT SPECIFIC TOKENS === */
+
+  /* Button */
+  --button-primary-bg: var(--color-interactive-primary);
+  --button-primary-bg-hover: var(--color-interactive-primary-hover);
+  --button-primary-bg-active: var(--color-interactive-primary-active);
+  --button-primary-text: var(--color-gray-900);
+  --button-primary-border: var(--color-interactive-primary);
+
+  --button-secondary-bg: var(--color-interactive-secondary);
+  --button-secondary-bg-hover: var(--color-interactive-secondary-hover);
+  --button-secondary-bg-active: var(--color-interactive-secondary-active);
+  --button-secondary-text: var(--color-text-primary);
+  --button-secondary-border: var(--color-border-primary);
+
+  /* Input */
+  --input-bg: var(--color-surface-primary);
+  --input-bg-disabled: var(--color-background-secondary);
+  --input-border: var(--color-border-primary);
+  --input-border-hover: var(--color-border-secondary);
+  --input-border-focus: var(--color-border-focus);
+  --input-text: var(--color-text-primary);
+  --input-placeholder: var(--color-text-tertiary);
+
+  /* Modal */
+  --modal-backdrop: rgba(0, 0, 0, 0.8);
+  --modal-bg: var(--color-surface-primary);
+  --modal-border: var(--color-border-primary);
+  --modal-shadow: var(--shadow-2xl);
+
+  /* Card */
+  --card-bg: var(--color-surface-primary);
+  --card-border: var(--color-border-primary);
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  /* Tooltip */
+  --tooltip-bg: var(--color-surface-inverse);
+  --tooltip-text: var(--color-text-inverse);
+  --tooltip-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+}

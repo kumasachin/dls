@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MenuList } from './MenuList';
+
 const mockItems = [
   { id: '1', label: 'Item 1' },
   { id: '2', label: 'Item 2' },

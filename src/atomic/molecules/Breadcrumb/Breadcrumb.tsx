@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface BreadcrumbItem {
   label: string;
@@ -20,7 +20,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
 }) => {
   const displayItems: BreadcrumbItem[] =
     maxItems && items.length > maxItems
-      ? [items[0]!, { label: '...' }, ...items.slice(-(maxItems - 2))]
+      ? [items[0] || { label: 'Home' }, { label: '...' }, ...items.slice(-(maxItems - 2))]
       : items;
 
   const handleItemClick = (item: BreadcrumbItem, event: React.MouseEvent) => {
@@ -53,7 +53,10 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
         }}
       >
         {displayItems.map((item, index) => (
-          <li key={index} style={{ display: 'flex', alignItems: 'center' }}>
+          <li
+            key={item.label || `breadcrumb-${index}`}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
             {item.href || item.onClick ? (
               <a
                 href={item.href}

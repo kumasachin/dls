@@ -28,7 +28,7 @@
     "exactOptionalPropertyTypes": true, // TODO: Enable after fixing optional prop issues
     "noImplicitReturns": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true, // TODO: Enable after refactoring index access
+    "noPropertyAccessFromIndexSignature": false, // Disabled to allow CSS module dot notation
     "noUncheckedIndexedAccess": true, // TODO: Enable after adding proper array/object checks    /* Import/Export */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

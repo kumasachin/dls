@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 import { CardGrid, type CardGridItem } from './CardGrid';
+
 describe('CardGrid Component', () => {
   const mockItems: CardGridItem[] = [
     {
@@ -83,7 +84,7 @@ describe('CardGrid Component', () => {
       {
         id: 1,
         title: 'Item with Action',
-        actions: <button>Test Action</button>,
+        actions: <button type="button">Test Action</button>,
       },
     ];
     render(<CardGrid items={itemsWithActions} />);

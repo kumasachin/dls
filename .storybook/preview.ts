@@ -1,4 +1,9 @@
 import type { Preview } from '@storybook/react-vite';
+import '@fontsource/roboto/300.css'; // Light
+import '@fontsource/roboto/400.css'; // Regular
+import '@fontsource/roboto/500.css'; // Medium
+import '@fontsource/roboto/700.css'; // Bold
+import '../src/index.css';
 
 const preview: Preview = {
   parameters: {

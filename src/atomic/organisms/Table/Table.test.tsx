@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Table } from './Table';
+
 interface TestUser {
   id: string;
   name: string;
@@ -38,9 +39,12 @@ describe('Table Component', () => {
         onRowClick={mockRowClick}
       />
     );
-    const firstRow = screen.getByText('John Doe').closest('tr')!;
-    await user.click(firstRow);
-    expect(mockRowClick).toHaveBeenCalledWith(mockData[0]);
+    const firstRow = screen.getByText('John Doe').closest('tr');
+    expect(firstRow).not.toBeNull();
+    if (firstRow) {
+      await user.click(firstRow);
+      expect(mockRowClick).toHaveBeenCalledWith(mockData[0]);
+    }
   });
   it('shows loading state', () => {
     const { container } = render(

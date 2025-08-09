@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Pagination } from '../../../../atomic/molecules/Pagination/Pagination';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Atomic/Molecules/Pagination',
+  title: 'Molecules/Pagination',
   component: Pagination,
   parameters: {
     layout: 'centered',

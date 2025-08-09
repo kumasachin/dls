@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { UserInfo } from './UserInfo';
+
 describe('UserInfo Component', () => {
   it('renders user name', () => {
     render(<UserInfo name="John Doe" />);

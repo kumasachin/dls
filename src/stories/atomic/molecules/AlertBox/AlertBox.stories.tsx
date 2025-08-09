@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { AlertBox } from '../../../../atomic/molecules/AlertBox/AlertBox';
 import { useState } from 'react';
+import { AlertBox } from '../../../../atomic/molecules/AlertBox/AlertBox';
 
 const meta: Meta<typeof AlertBox> = {
   title: 'Molecules/AlertBox',
@@ -32,7 +32,7 @@ export const Warning: Story = {
   },
 };
 
-export const Error: Story = {
+export const ErrorAlert: Story = {
   args: {
     type: 'error',
     message: 'An error occurred while processing your request',
@@ -44,7 +44,11 @@ export const Dismissible: Story = {
     const [visible, setVisible] = useState(true);
 
     if (!visible) {
-      return <button onClick={() => setVisible(true)}>Show Alert Again</button>;
+      return (
+        <button type="button" onClick={() => setVisible(true)}>
+          Show Alert Again
+        </button>
+      );
     }
 
     return (

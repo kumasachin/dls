@@ -33,7 +33,8 @@ export const MenuList: React.FC<MenuListProps> = ({
     >
       {items.map((item, index) => (
         <React.Fragment key={item.id}>
-          <div
+          <button
+            type="button"
             style={{
               padding: '8px 16px',
               cursor: item.disabled ? 'not-allowed' : 'pointer',
@@ -41,12 +42,17 @@ export const MenuList: React.FC<MenuListProps> = ({
               alignItems: 'center',
               gap: '8px',
               opacity: item.disabled ? 0.5 : 1,
+              border: 'none',
+              background: 'transparent',
+              textAlign: 'left',
+              width: '100%',
             }}
             onClick={item.disabled ? undefined : item.onClick}
+            disabled={item.disabled}
           >
             {item.icon && <span>{item.icon}</span>}
             <span>{item.label}</span>
-          </div>
+          </button>
           {index < items.length - 1 && <Divider margin="0" />}
         </React.Fragment>
       ))}

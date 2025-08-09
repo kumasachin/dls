@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Avatar } from './Avatar';
+
 describe('Avatar Component', () => {
   it('renders with image when src is provided', () => {
     render(<Avatar src="https://example.com/avatar.jpg" alt="User Avatar" />);

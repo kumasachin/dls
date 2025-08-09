@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SearchBar } from '../../../../atomic/molecules/SearchBar/SearchBar';
 import { useState } from 'react';
+import { SearchBar } from '../../../../atomic/molecules/SearchBar/SearchBar';
 
 const meta: Meta<typeof SearchBar> = {
   title: 'Molecules/SearchBar',

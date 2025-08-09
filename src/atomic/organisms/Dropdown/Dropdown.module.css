@@ -1,0 +1,197 @@
+/* Dropdown Root */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger Styles */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.trigger:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-border-hover);
+}
+
+.trigger:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-alpha-20);
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--color-muted);
+}
+
+/* Trigger Variants */
+.triggerDefault {
+  background-color: var(--color-background);
+  border-color: var(--color-border);
+}
+
+.triggerOutline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.triggerOutline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.triggerGhost {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.triggerGhost:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-border);
+}
+
+/* Trigger Sizes */
+.triggerSmall {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.triggerMedium {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.triggerLarge {
+  height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+/* Trigger Icon */
+.triggerIcon {
+  font-size: 12px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.trigger[aria-expanded='true'] .triggerIcon {
+  transform: rotate(180deg);
+}
+
+/* Content Styles */
+.content {
+  position: absolute;
+  z-index: 1000;
+  min-width: 160px;
+  max-width: 300px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 4px;
+  animation: dropdownSlideDown 0.2s ease-out;
+}
+
+@keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Content Alignment */
+.contentAlignStart {
+  left: 0;
+}
+
+.contentAlignCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contentAlignEnd {
+  right: 0;
+}
+
+/* Content Side */
+.contentSideTop {
+  bottom: 100%;
+  margin-bottom: 4px;
+}
+
+.contentSideBottom {
+  top: 100%;
+  margin-top: 4px;
+}
+
+.contentSideLeft {
+  right: 100%;
+  margin-right: 4px;
+  top: 0;
+}
+
+.contentSideRight {
+  left: 100%;
+  margin-left: 4px;
+  top: 0;
+}
+
+/* Item Styles */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+.item:hover,
+.item:focus {
+  background-color: var(--color-accent);
+}
+
+/* Active item (keyboard navigation) */
+[data-active='true'] .item {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.itemDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Separator */
+.separator {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 4px 0;
+}

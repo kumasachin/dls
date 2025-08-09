@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Avatar } from '../../atoms/Avatar/Avatar';
 import { Text } from '../../atoms/Text/Text';
 

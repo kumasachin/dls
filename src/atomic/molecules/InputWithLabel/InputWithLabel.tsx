@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 import { Input, type InputProps } from '../../atoms/Input/Input';
 import { Text } from '../../atoms/Text/Text';

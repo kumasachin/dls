@@ -120,7 +120,7 @@ export const WithCustomActions: Story = {
           alert(`Subscribed: ${email}`);
         }}
         actions={[
-          <Button onClick={() => setEmail('')} variant="secondary">
+          <Button key="clear-action" onClick={() => setEmail('')} variant="secondary">
             Clear
           </Button>,
         ]}

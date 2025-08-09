@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Card } from '../../atoms/Card/Card';
 import { Spinner } from '../../atoms/Spinner/Spinner';
 import { Text } from '../../atoms/Text/Text';
@@ -70,7 +70,7 @@ export function Table<T>({
                       backgroundColor: selectedId === id ? '#f5f5f5' : 'white',
                       cursor: onRowClick ? 'pointer' : 'default',
                     }}
-                    onClick={() => onRowClick && onRowClick(item)}
+                    onClick={() => onRowClick?.(item)}
                   >
                     {columns.map((column) => (
                       <td key={`${id}-${column.id}`} style={{ padding: '12px 16px' }}>

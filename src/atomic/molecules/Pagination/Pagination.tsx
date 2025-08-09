@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface PaginationProps extends React.HTMLAttributes<HTMLElement> {
   currentPage: number;
@@ -102,6 +102,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     >
       {showFirstLast && (
         <button
+          type="button"
           onClick={() => handlePageClick(1)}
           disabled={disabled || currentPage === 1}
           style={disabled || currentPage === 1 ? disabledButtonStyle : buttonStyle}
@@ -113,6 +114,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
       {showPrevNext && (
         <button
+          type="button"
           onClick={() => handlePageClick(currentPage - 1)}
           disabled={disabled || currentPage === 1}
           style={disabled || currentPage === 1 ? disabledButtonStyle : buttonStyle}
@@ -122,11 +124,11 @@ export const Pagination: React.FC<PaginationProps> = ({
         </button>
       )}
 
-      {visiblePages.map((page, index) => {
+      {visiblePages.map((page, _index) => {
         if (typeof page === 'string') {
           return (
             <span
-              key={`ellipsis-${index}`}
+              key={`ellipsis-${page}-${currentPage}`}
               style={{
                 ...buttonStyle,
                 cursor: 'default',
@@ -141,6 +143,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
         return (
           <button
+            type="button"
             key={page}
             onClick={() => handlePageClick(page)}
             disabled={disabled}
@@ -155,6 +158,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
       {showPrevNext && (
         <button
+          type="button"
           onClick={() => handlePageClick(currentPage + 1)}
           disabled={disabled || currentPage === totalPages}
           style={disabled || currentPage === totalPages ? disabledButtonStyle : buttonStyle}
@@ -166,6 +170,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
       {showFirstLast && (
         <button
+          type="button"
           onClick={() => handlePageClick(totalPages)}
           disabled={disabled || currentPage === totalPages}
           style={disabled || currentPage === totalPages ? disabledButtonStyle : buttonStyle}

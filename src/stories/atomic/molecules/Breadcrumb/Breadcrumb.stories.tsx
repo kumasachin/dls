@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Breadcrumb } from '../../../../atomic/molecules/Breadcrumb/Breadcrumb';
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Atomic/Molecules/Breadcrumb',
+  title: 'Molecules/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'centered',

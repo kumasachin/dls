@@ -1,0 +1,81 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":automergeDigest",
+    ":automergeBranch"
+  ],
+  "schedule": ["before 6am on Monday"],
+  "timezone": "UTC",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "description": "Automerge non-major updates",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Group React ecosystem updates",
+      "matchPackagePatterns": ["^react", "^@types/react"],
+      "groupName": "React ecosystem",
+      "schedule": ["before 6am on Monday"]
+    },
+    {
+      "description": "Group testing updates",
+      "matchPackagePatterns": ["^@testing-library/", "^jest", "^vitest", "@vitest/"],
+      "groupName": "Testing dependencies",
+      "schedule": ["before 6am on Monday"]
+    },
+    {
+      "description": "Group Storybook updates",
+      "matchPackagePatterns": ["^@storybook/", "^storybook"],
+      "groupName": "Storybook",
+      "schedule": ["before 6am on Monday"]
+    },
+    {
+      "description": "Group ESLint/Prettier updates",
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint/", "^prettier"],
+      "groupName": "Linting and formatting",
+      "schedule": ["before 6am on Monday"]
+    },
+    {
+      "description": "Group TypeScript updates",
+      "matchPackageNames": ["typescript"],
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "TypeScript and type definitions",
+      "schedule": ["before 6am on Monday"]
+    },
+    {
+      "description": "Auto-merge dev dependencies",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Auto-merge type definitions",
+      "matchPackagePatterns": ["^@types/"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": ["at any time"]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on Monday"]
+  },
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to {{newVersion}}",
+  "commitMessageSuffix": "",
+  "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/coverage/**", "**/storybook-static/**"]
+}

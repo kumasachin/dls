@@ -29,7 +29,7 @@ export const Warning: Story = {
   },
 };
 
-export const Error: Story = {
+export const ErrorBadge: Story = {
   args: {
     children: 'Error',
     variant: 'error',

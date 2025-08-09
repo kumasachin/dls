@@ -24,9 +24,9 @@ const buttonStyles = cva(
         danger: 'bg-red-600 text-white border-red-600 hover:bg-red-700 focus-visible:ring-red-500',
       },
       size: {
-        sm: 'h-8 px-3 text-sm',
-        md: 'h-10 px-4 text-sm',
-        lg: 'h-12 px-6 text-base',
+        sm: 'button-sm',
+        md: 'button-md',
+        lg: 'button-lg',
       },
     },
     defaultVariants: {
@@ -72,7 +72,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && (
-          <span className="animate-spin" aria-label="Loading">
+          <span className="animate-spin" aria-hidden="true">
             ⏳
           </span>
         )}

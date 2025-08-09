@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Tag } from '../../../../atomic/atoms/Tag/Tag';
 import { useState } from 'react';
+import { Tag } from '../../../../atomic/atoms/Tag/Tag';
 
 const meta: Meta<typeof Tag> = {
   title: 'Atoms/Tag',
@@ -48,7 +48,11 @@ export const Removable: Story = {
     const [visible, setVisible] = useState(true);
 
     if (!visible) {
-      return <button onClick={() => setVisible(true)}>Show Tag Again</button>;
+      return (
+        <button type="button" onClick={() => setVisible(true)}>
+          Show Tag Again
+        </button>
+      );
     }
 
     return <Tag label="Click × to remove" onRemove={() => setVisible(false)} color="primary" />;

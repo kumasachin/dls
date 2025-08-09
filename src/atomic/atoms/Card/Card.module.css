@@ -1,0 +1,57 @@
+/* Base card styles */
+.card {
+  background-color: var(--card-bg);
+  transition: var(--transition-fast);
+}
+
+/* Elevation variants */
+.elevationFlat {
+  box-shadow: none;
+}
+
+.elevationRaised {
+  box-shadow: var(--shadow-sm);
+}
+
+.elevationFloating {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Border variants */
+.borderSubtle {
+  border: 1px solid var(--card-border);
+}
+
+.borderStrong {
+  border: 2px solid var(--card-border-strong);
+}
+
+/* Padding variants */
+.paddingCompact {
+  padding: var(--space-md);
+}
+
+.paddingDefault {
+  padding: var(--space-lg);
+}
+
+.paddingSpacious {
+  padding: var(--space-xl);
+}
+
+/* Radius variants */
+.radiusNone {
+  border-radius: 0;
+}
+
+.radiusSmall {
+  border-radius: var(--radius-sm);
+}
+
+.radiusMedium {
+  border-radius: var(--radius-md);
+}
+
+.radiusLarge {
+  border-radius: var(--radius-lg);
+}

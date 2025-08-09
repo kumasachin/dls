@@ -1,7 +1,7 @@
-import React from 'react';
+import type React from 'react';
 import { Card } from '../../atoms/Card/Card';
-import { Text } from '../../atoms/Text/Text';
 import { IconButton } from '../../atoms/IconButton/IconButton';
+import { Text } from '../../atoms/Text/Text';
 
 export interface AlertBoxProps {
   type?: 'info' | 'success' | 'warning' | 'error';

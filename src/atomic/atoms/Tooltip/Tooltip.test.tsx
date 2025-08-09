@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import { Tooltip } from './Tooltip';
+
 describe('Tooltip Component', () => {
   it('renders without crashing', () => {
     render(

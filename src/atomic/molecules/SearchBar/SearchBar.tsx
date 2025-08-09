@@ -1,6 +1,6 @@
-import React from 'react';
-import { Input } from '../../atoms/Input/Input';
+import type React from 'react';
 import { IconButton } from '../../atoms/IconButton/IconButton';
+import { Input } from '../../atoms/Input/Input';
 
 export interface SearchBarProps {
   value: string;

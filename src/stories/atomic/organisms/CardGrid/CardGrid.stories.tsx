@@ -3,7 +3,7 @@ import { Button } from '../../../../atomic/atoms/Button/Button';
 import { CardGrid, type CardGridItem } from '../../../../atomic/organisms/CardGrid/CardGrid';
 
 const meta: Meta<typeof CardGrid> = {
-  title: 'Atomic/Organisms/CardGrid',
+  title: 'Organisms/CardGrid',
   component: CardGrid,
   parameters: {
     layout: 'padded',

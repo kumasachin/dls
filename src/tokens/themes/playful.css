@@ -1,0 +1,46 @@
+/**
+ * Playful Theme - Vibrant variant with rounded corners and bright colors
+ */
+
+[data-theme='playful'] {
+  /* Override primary colors with vibrant purple */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7c3aed;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
+
+  /* Playful semantic tokens */
+  --color-background-primary: #fefefe;
+  --color-background-secondary: #fafafa;
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #fefefe;
+
+  /* Vibrant interactive colors */
+  --color-interactive-primary: var(--color-primary-500);
+  --color-interactive-primary-hover: var(--color-primary-400);
+  --color-interactive-primary-active: var(--color-primary-600);
+
+  /* More pronounced shadows for playful feel */
+  --card-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.1), 0 2px 4px -2px rgba(168, 85, 247, 0.1);
+  --card-shadow-hover:
+    0 10px 15px -3px rgba(168, 85, 247, 0.2), 0 4px 6px -4px rgba(168, 85, 247, 0.2);
+
+  /* Rounded corners for playful look */
+  --radius-base: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.25rem; /* 20px */
+
+  /* Colorful status indicators */
+  --color-status-success: #10b981;
+  --color-status-warning: #f59e0b;
+  --color-status-error: #f43f5e;
+  --color-status-info: #06b6d4;
+}

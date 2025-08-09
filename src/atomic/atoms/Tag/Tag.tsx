@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 export interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
   label: string;
@@ -62,7 +62,8 @@ export const Tag: React.FC<TagProps> = ({
     >
       {label}
       {onRemove && (
-        <span
+        <button
+          type="button"
           onClick={(e) => {
             e.stopPropagation();
             onRemove();
@@ -73,10 +74,14 @@ export const Tag: React.FC<TagProps> = ({
             fontWeight: 'bold',
             fontSize: '16px',
             lineHeight: 1,
+            background: 'none',
+            border: 'none',
+            padding: 0,
           }}
+          aria-label="Remove tag"
         >
           ×
-        </span>
+        </button>
       )}
     </span>
   );

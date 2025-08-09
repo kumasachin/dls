@@ -1,47 +1,50 @@
-@import '../../../tokens/dist/tokens.css';
-
+/* Primary variant */
 .bg-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: var(--button-primary-bg);
+  border-color: var(--button-primary-border);
 }
 
 .bg-primary:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  filter: brightness(0.9);
+  background-color: var(--button-primary-bg-hover);
+  border-color: var(--button-primary-border-hover);
 }
 
 .text-white {
-  color: white;
+  color: var(--button-primary-text);
 }
 
 /* Secondary variant */
 .bg-white {
-  background-color: var(--color-background);
+  background-color: var(--button-secondary-bg);
+  border-color: var(--button-secondary-border);
 }
 
 .bg-white:hover:not(:disabled) {
-  background-color: var(--color-surface);
+  background-color: var(--button-secondary-bg-hover);
+  border-color: var(--button-secondary-border-hover);
 }
 
 .text-gray-900 {
-  color: var(--color-text);
+  color: var(--button-secondary-text);
 }
 
 .border-gray-300 {
-  border-color: var(--color-border);
+  border-color: var(--button-secondary-border);
 }
 
 /* Ghost variant */
 .bg-transparent {
   background-color: transparent;
+  border-color: transparent;
 }
 
 .bg-transparent:hover:not(:disabled) {
-  background-color: var(--color-surface);
+  background-color: var(--button-ghost-bg-hover);
+  border-color: var(--button-ghost-border-hover);
 }
 
 .text-gray-700 {
-  color: var(--color-text);
+  color: var(--button-ghost-text);
 }
 
 .border-transparent {
@@ -172,4 +175,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Button sizes using theme tokens */
+.button-sm {
+  height: var(--space-2xl);
+  padding: 0 var(--space-md);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+}
+
+.button-md {
+  height: var(--space-3xl);
+  padding: 0 var(--space-lg);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
+.button-lg {
+  height: var(--space-4xl);
+  padding: 0 var(--space-xl);
+  font-size: var(--text-base);
+  border-radius: var(--radius-md);
 }
