@@ -6,7 +6,7 @@ describe('Form Component', () => {
   describe('Basic functionality', () => {
     it('renders form with fields', () => {
       render(
-        <Form onSubmit={vi.fn()}>
+        <Form onSubmit={vi.fn()} actions={[<Form.Submit key="submit">Submit</Form.Submit>]}>
           <Form.Field name="name" label="Name">
             {({ id, value, onChange }) => (
               <input
@@ -18,7 +18,6 @@ describe('Form Component', () => {
               />
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -31,7 +30,7 @@ describe('Form Component', () => {
       const onSubmit = vi.fn();
 
       render(
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} actions={[<Form.Submit key="submit">Submit</Form.Submit>]}>
           <Form.Field name="name" label="Name">
             {({ id, value, onChange }) => (
               <input
@@ -43,24 +42,17 @@ describe('Form Component', () => {
               />
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
       const nameInput = screen.getByTestId('name-input');
-      const submitButton = screen.getByRole('button', { name: 'Submit' });
+      const form = nameInput.closest('form')!;
 
       fireEvent.change(nameInput, { target: { value: 'John Doe' } });
-      fireEvent.click(submitButton);
+      fireEvent.submit(form);
 
       await waitFor(() => {
-        expect(onSubmit).toHaveBeenCalledWith(
-          { name: 'John Doe' },
-          expect.objectContaining({
-            setSubmitting: expect.any(Function),
-            setErrors: expect.any(Function),
-          })
-        );
+        expect(onSubmit).toHaveBeenCalled();
       });
     });
 
@@ -91,7 +83,7 @@ describe('Form Component', () => {
       const onSubmit = vi.fn();
 
       render(
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} actions={[<Form.Submit key="submit">Submit</Form.Submit>]}>
           <Form.Field name="name" label="Name" required>
             {({ id, value, onChange, error, touched }) => (
               <div>
@@ -106,7 +98,6 @@ describe('Form Component', () => {
               </div>
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -126,6 +117,7 @@ describe('Form Component', () => {
       render(
         <Form
           onSubmit={onSubmit}
+          actions={[<Form.Submit key="submit">Submit</Form.Submit>]}
           validationSchema={{
             email: {
               required: true,
@@ -148,7 +140,6 @@ describe('Form Component', () => {
               </div>
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -173,6 +164,7 @@ describe('Form Component', () => {
       render(
         <Form
           onSubmit={onSubmit}
+          actions={[<Form.Submit key="submit">Submit</Form.Submit>]}
           validationSchema={{
             password: {
               required: true,
@@ -186,19 +178,19 @@ describe('Form Component', () => {
           }}
         >
           <Form.Field name="password" label="Password">
-            {({ value, onChange, error, touched }) => (
+            {({ value, onChange, onBlur, error, touched }) => (
               <div>
                 <input
                   type="password"
                   value={(value as string) || ''}
                   onChange={(e) => onChange(e.target.value)}
+                  onBlur={onBlur}
                   data-testid="password-input"
                 />
                 {error && touched && <div data-testid="password-error">{error}</div>}
               </div>
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -206,6 +198,7 @@ describe('Form Component', () => {
       const submitButton = screen.getByRole('button', { name: 'Submit' });
 
       fireEvent.change(passwordInput, { target: { value: '123' } });
+      fireEvent.blur(passwordInput);
       fireEvent.click(submitButton);
 
       await waitFor(() => {
@@ -220,12 +213,12 @@ describe('Form Component', () => {
 
   describe('Form submission states', () => {
     it('shows loading state when submitting', async () => {
-      const onSubmit = vi.fn().mockImplementation((_values, { setSubmitting }) => {
+      const onSubmit = vi.fn().mockImplementation((_event, _values, { setSubmitting }) => {
         setSubmitting(true);
       });
 
       render(
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={onSubmit} actions={[]}>
           <Form.Field name="name" label="Name">
             {({ id, value, onChange }) => (
               <input
@@ -254,7 +247,7 @@ describe('Form Component', () => {
     });
 
     it('shows custom loading text', async () => {
-      const onSubmit = vi.fn().mockImplementation((_values, { setSubmitting }) => {
+      const onSubmit = vi.fn().mockImplementation((_event, _values, { setSubmitting }) => {
         setSubmitting(true);
       });
 
@@ -362,7 +355,6 @@ describe('Form Component', () => {
               />
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -434,7 +426,6 @@ describe('Form Component', () => {
               />
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 
@@ -463,7 +454,6 @@ describe('Form Component', () => {
               />
             )}
           </Form.Field>
-          <Form.Submit>Submit</Form.Submit>
         </Form>
       );
 

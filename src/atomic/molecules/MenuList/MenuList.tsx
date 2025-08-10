@@ -24,7 +24,7 @@ export const MenuList: React.FC<MenuListProps> = ({
   return (
     <Card
       radius="sm"
-      padding="4px"
+      padding="compact"
       style={{
         maxHeight,
         width,

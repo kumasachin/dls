@@ -30,7 +30,7 @@ export function Table<T>({
   selectedId,
 }: TableProps<T>) {
   return (
-    <Card padding="0" style={{ overflow: 'hidden' }}>
+    <Card style={{ overflow: 'hidden', padding: 0 }}>
       {isLoading ? (
         <div style={{ display: 'flex', justifyContent: 'center', padding: '40px' }}>
           <Spinner />

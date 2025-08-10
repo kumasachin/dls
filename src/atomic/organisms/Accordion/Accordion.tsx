@@ -248,7 +248,9 @@ const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children, className
         data-accordion-trigger
         disabled={disabled}
       >
-        <h3 style={{ flex: 1 }}>{children}</h3>
+        <h3 style={{ flex: 1 }} role="heading" aria-level={3}>
+          {children}
+        </h3>
         <span style={getIconStyles()} aria-hidden="true">
           ▼
         </span>
