@@ -1,0 +1,256 @@
+/* ListItem Component Styles */
+
+.list-item-base {
+  display: flex;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-background);
+  border: 1px solid transparent;
+  position: relative;
+}
+
+/* Interactive States */
+.list-item-interactive {
+  cursor: pointer;
+}
+
+.list-item-interactive:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-200);
+}
+
+.list-item-interactive:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+.list-item-interactive:active {
+  background-color: var(--color-gray-100);
+}
+
+.list-item-selected {
+  background-color: var(--color-primary-50);
+  border-color: var(--color-primary-200);
+}
+
+.list-item-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Layout Variants */
+.list-item-horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.list-item-vertical {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+/* Size Variants */
+.list-item-sm {
+  padding: 8px;
+  gap: 8px;
+}
+
+.list-item-sm.list-item-horizontal {
+  gap: 8px;
+}
+
+.list-item-md {
+  padding: 12px;
+  gap: 12px;
+}
+
+.list-item-lg {
+  padding: 16px;
+  gap: 16px;
+}
+
+/* Style Variants */
+.list-item-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.list-item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-item-compact {
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.list-item-detailed {
+  padding: 20px;
+  gap: 16px;
+  border: 1px solid var(--color-gray-200);
+}
+
+/* Image Section */
+.list-item-image {
+  flex-shrink: 0;
+}
+
+.list-item-vertical .list-item-image {
+  align-self: center;
+}
+
+/* Content Section */
+.list-item-content {
+  flex: 1;
+  min-width: 0; /* Allows content to shrink */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.list-item-title {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.4;
+}
+
+.list-item-metadata {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.list-item-description {
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Footer Section */
+.list-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.list-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
+}
+
+.list-item-rating {
+  flex-shrink: 0;
+}
+
+/* Actions Section */
+.list-item-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .list-item-horizontal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .list-item-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .list-item-metadata {
+    white-space: normal;
+  }
+
+  .list-item-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .list-item-rating {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-item-base {
+    padding: 8px;
+  }
+
+  .list-item-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .list-item-base {
+    background-color: var(--color-gray-900);
+  }
+
+  .list-item-interactive:hover {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+  }
+
+  .list-item-interactive:active {
+    background-color: var(--color-gray-750);
+  }
+
+  .list-item-selected {
+    background-color: var(--color-primary-900);
+    border-color: var(--color-primary-700);
+  }
+
+  .list-item-card {
+    background-color: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+  }
+
+  .list-item-detailed {
+    border-color: var(--color-gray-700);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .list-item-base {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .list-item-base {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+  }
+
+  .list-item-actions {
+    display: none;
+  }
+}

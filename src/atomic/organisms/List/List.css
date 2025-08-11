@@ -1,0 +1,253 @@
+/* List Component Styles */
+
+.list-base {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.list-base:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Layout Variants */
+.list-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--list-grid-columns, 2), 1fr);
+  gap: var(--list-spacing);
+}
+
+/* Size Variants */
+.list-sm {
+  --list-spacing: 8px;
+}
+
+.list-md {
+  --list-spacing: 12px;
+}
+
+.list-lg {
+  --list-spacing: 16px;
+}
+
+/* Spacing Variants */
+.list-spacing-none {
+  --list-spacing: 0px;
+}
+
+.list-spacing-sm {
+  --list-spacing: 8px;
+}
+
+.list-spacing-md {
+  --list-spacing: 12px;
+}
+
+.list-spacing-lg {
+  --list-spacing: 16px;
+}
+
+/* Style Variants */
+.list-divided .list-item-wrapper:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.list-bordered {
+  border: 1px solid var(--color-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.list-bordered .list-item-wrapper:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.list-cards .list-item-wrapper {
+  margin-bottom: var(--list-spacing);
+}
+
+.list-cards .list-item-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* List Item Wrappers */
+.list-item-wrapper {
+  position: relative;
+}
+
+.list-stack .list-item-wrapper {
+  margin-bottom: var(--list-spacing);
+}
+
+.list-stack .list-item-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.list-item-wrapper[data-focused='true'] {
+  z-index: 1;
+}
+
+.list-item-wrapper[data-focused='true']::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--color-primary-500);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Loading State */
+.list-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.list-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-gray-500);
+}
+
+.list-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-gray-300);
+  border-top: 3px solid var(--color-primary-500);
+  border-radius: 50%;
+  animation: listSpinnerRotate 1s linear infinite;
+}
+
+@keyframes listSpinnerRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Empty State */
+.list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 40px 20px;
+}
+
+.list-empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-gray-500);
+  text-align: center;
+}
+
+.list-empty-icon {
+  color: var(--color-gray-400);
+}
+
+/* Grid Responsive Behavior */
+@media (max-width: 768px) {
+  .list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .list-grid {
+    grid-template-columns: repeat(min(var(--list-grid-columns, 2), 2), 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .list-grid {
+    grid-template-columns: repeat(min(var(--list-grid-columns, 3), 4), 1fr);
+  }
+}
+
+/* Accessibility & Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .list-spinner {
+    animation: none;
+  }
+
+  .list-item-wrapper[data-focused='true']::before {
+    transition: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .list-divided .list-item-wrapper:not(:last-child),
+  .list-bordered,
+  .list-bordered .list-item-wrapper:not(:last-child) {
+    border-color: var(--color-gray-700);
+  }
+
+  .list-loading-content,
+  .list-empty-content {
+    color: var(--color-gray-400);
+  }
+
+  .list-empty-icon {
+    color: var(--color-gray-500);
+  }
+
+  .list-spinner {
+    border-color: var(--color-gray-600);
+    border-top-color: var(--color-primary-400);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .list-base {
+    break-inside: avoid;
+  }
+
+  .list-grid {
+    display: block;
+  }
+
+  .list-item-wrapper {
+    break-inside: avoid;
+    margin-bottom: 8px;
+  }
+
+  .list-loading,
+  .list-empty {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .list-item-wrapper[data-focused='true']::before {
+    border-color: ButtonText;
+    border-width: 3px;
+  }
+
+  .list-divided .list-item-wrapper:not(:last-child),
+  .list-bordered,
+  .list-bordered .list-item-wrapper:not(:last-child) {
+    border-color: ButtonText;
+  }
+}

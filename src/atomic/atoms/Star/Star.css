@@ -1,0 +1,146 @@
+/* Star Base Styles */
+.star-base {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.star-icon {
+  display: block;
+}
+
+/* Star Sizes */
+.star-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.star-md {
+  width: 20px;
+  height: 20px;
+}
+
+.star-lg {
+  width: 24px;
+  height: 24px;
+}
+
+.star-xl {
+  width: 32px;
+  height: 32px;
+}
+
+/* Star States */
+.star-background {
+  fill: #e5e7eb; /* gray-200 */
+  stroke: #d1d5db; /* gray-300 */
+  stroke-width: 1;
+}
+
+.star-fill {
+  fill: currentColor;
+  clip-path: inset(0 calc(100% - var(--star-fill-percentage)) 0 0);
+  transition: clip-path 0.2s ease;
+}
+
+/* Star Variants */
+.star-default .star-fill {
+  color: #fbbf24; /* amber-400 */
+}
+
+.star-primary .star-fill {
+  color: #3b82f6; /* blue-500 */
+}
+
+.star-secondary .star-fill {
+  color: #6b7280; /* gray-500 */
+}
+
+.star-warning .star-fill {
+  color: #f59e0b; /* amber-500 */
+}
+
+.star-success .star-fill {
+  color: #10b981; /* emerald-500 */
+}
+
+.star-danger .star-fill {
+  color: #ef4444; /* red-500 */
+}
+
+/* Interactive States */
+.star-interactive {
+  cursor: pointer;
+}
+
+.star-interactive:hover .star-fill {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.star-interactive:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.star-interactive:active .star-fill {
+  transform: scale(0.95);
+}
+
+/* Static (non-interactive) state */
+.star-static {
+  cursor: default;
+}
+
+/* Disabled state */
+.star-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.star-disabled .star-fill {
+  color: #9ca3af; /* gray-400 */
+}
+
+/* Specific state overrides */
+.star-empty .star-fill {
+  clip-path: inset(0 100% 0 0);
+}
+
+.star-half .star-fill {
+  clip-path: inset(0 50% 0 0);
+}
+
+.star-full .star-fill {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .star-background {
+    stroke-width: 2;
+  }
+
+  .star-fill {
+    stroke: currentColor;
+    stroke-width: 1;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .star-base,
+  .star-fill {
+    transition: none;
+  }
+
+  .star-interactive:hover .star-fill {
+    transform: none;
+  }
+
+  .star-interactive:active .star-fill {
+    transform: none;
+  }
+}
