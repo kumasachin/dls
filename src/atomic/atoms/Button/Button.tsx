@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { clsx } from 'clsx';
 import React from 'react';
 import { Box } from '../../primitives/Box';
-import './Button.css';
+import './button.css';
 
 const buttonStyles = cva(
   [
